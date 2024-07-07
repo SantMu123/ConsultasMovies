@@ -183,4 +183,21 @@ export class movies extends connect {
         ).toArray();
         return res;
     }
+    async getIdActor1Movie(){
+        let res = await this.collection.find(
+            {
+                character: {
+                    $elemMatch: {id_actor:{$eq:1}}
+                }
+            },
+            {
+                projection: {
+                    _id: 0,
+                    name: 1,
+                    character:1
+                }
+            }
+        ).toArray();
+        return res;
+    }
 }
