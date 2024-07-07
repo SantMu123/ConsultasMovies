@@ -200,4 +200,21 @@ export class movies extends connect {
         ).toArray();
         return res;
     }
+    async getSecondCharacterCalledArthurMovie(){
+        let res = await this.collection.find(
+            {
+                character: {
+                    $elemMatch: {rol:{$eq:"secundario"}, apodo:{$eq:"Arthur"}}
+                }
+            },
+            {
+                projection: {
+                    _id: 0,
+                    name: 1,
+                    character:1
+                }
+            }
+        ).toArray();
+        return res;
+    }
 }
