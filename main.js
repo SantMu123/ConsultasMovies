@@ -21,5 +21,7 @@ let mongo = new movies()
 //console.log(await mongo.getAllMovies());
 //console.log(await mongo.getAllBluerray200Copies())
 //console.log(await mongo.getLessThan10ValueDVDFormat())
+//console.log(await mongo.getCharacterNamedCobbMovie())
 
-console.log(await mongo.getCharacterNamedCobbMovie())
+console.log(await mongo.getActorsId2And3Movies())
+
