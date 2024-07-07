@@ -132,5 +132,22 @@ export class movies extends connect {
         ).toArray();
         return res;
     }
+    async getAllFictionsMovies(){
+        let res = await this.collection.find(
+            {
+                genre: {
+                    $elemMatch: {$eq: "Ciencia Ficción"}
+                }
+            },
+            {
+                projection: {
+                    _id: 0,
+                    name: 1,
+                    genre:1
+                }
+            }
+        ).toArray();
+        return res;
+    }
     
 }
