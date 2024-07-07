@@ -52,8 +52,6 @@ export class connect {
         this.conexion = new MongoClient(`${this.getHost}${this.user}:${this.getPass}@${this.getCluster}:${this.port}`) //se está creando la conexion
         await this.conexion.connect();
         console.log("Conexion")
-        
-
     }
     async reconnect(){ //por si se llega a caer la conexion
         await this.#open()
