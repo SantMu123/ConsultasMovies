@@ -115,5 +115,22 @@ export class movies extends connect {
         ).toArray();
         return res;
     }
+    async getBlurayFormatMovies(){
+        let res = await this.collection.find(
+            {
+                format: {
+                    $elemMatch: { name: { $eq: "Bluray" }}
+                }
+            },
+            {
+                projection: {
+                    _id: 0,
+                    name: 1,
+                    format:1
+                }
+            }
+        ).toArray();
+        return res;
+    }
     
 }
