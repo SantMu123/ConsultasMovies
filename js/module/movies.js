@@ -82,5 +82,21 @@ export class movies extends connect {
         ).toArray();
         return res;
     }
+    async getCharacterNamedCobbMovie(){
+        let res = await this.collection.find(
+            {
+                character: {
+                    $elemMatch: { apodo: { $eq: "Cobb" }}
+                }
+            },
+            {
+                projection: {
+                    _id: 0,
+                    name: 1,
+                }
+            }
+        ).toArray();
+        return res;
+    }
     
 }
