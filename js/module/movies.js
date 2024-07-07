@@ -65,5 +65,22 @@ export class movies extends connect {
             }
         ]).toArray();
     */
+    async getLessThan10ValueDVDFormat(){
+        let res = await this.collection.find(
+            {
+                format: {
+                    $elemMatch: { name: { $eq: "dvd" }, value: { $lte: 10 } }
+                }
+            },
+            {
+                projection: {
+                    _id: 0,
+                    name: 1,
+                    format: 1
+                }
+            }
+        ).toArray();
+        return res;
+    }
     
 }

@@ -17,9 +17,8 @@ console.log(obj)
 console.log(obj2)*/
 
 
-//let mongo = new movies()
-//console.log(await mongo.getAllMovies());
-
 let mongo = new movies()
-console.log(await mongo.getAllBluerray200Copies())
+//console.log(await mongo.getAllMovies());
+//console.log(await mongo.getAllBluerray200Copies())
+console.log(await mongo.getLessThan10ValueDVDFormat())
 
