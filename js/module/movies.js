@@ -166,4 +166,21 @@ export class movies extends connect {
         ).toArray();
         return res;
     }
+    async getAtLeastMoreThan100CopiesMovies(){
+        let res = await this.collection.find(
+            {
+                format: {
+                    $elemMatch: {copies:{$gt:100}}
+                }
+            },
+            {
+                projection: {
+                    _id: 0,
+                    name: 1,
+                    format:1
+                }
+            }
+        ).toArray();
+        return res;
+    }
 }
