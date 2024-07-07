@@ -24,7 +24,9 @@ let mongo = new movies()
 //console.log(await mongo.getCharacterNamedCobbMovie())
 //console.log(await mongo.getActorsId2And3Movies())
 //console.log(await mongo.getBlurayFormatMovies())
-console.log(await mongo.getAllFictionsMovies())
+//console.log(await mongo.getAllFictionsMovies())
+console.log(await mongo.getPrincipalActorCalledMiguelMovie())
+
 
 
 
